@@ -13,24 +13,20 @@ namespace DEMO
             Console.WriteLine("Hello, World!");
             Console.WriteLine();
 
-            int N1;
-            int N2;
+            double N1;
+            double N2;
 
             do
             {
-                Console.WriteLine("เลข 1");
+                Console.WriteLine("จำนวนที่ 1");
                 string Text01 = Console.ReadLine();
 
-                if (int.TryParse(Text01, out N1))
+                if (double.TryParse(Text01, out N1))
                 {
                     Console.WriteLine($"คุณเลือก เลข {N1}");
                     break;
                 }
-                else if (double.TryParse(Text01, out N1))
-                {
-                    Console.WriteLine($"คุณเลือก เลข {N1}");
-                    break;
-                }
+
                 else
                 {
                     Console.WriteLine("\nกรุณาพิมเป็นตัวเลข");
@@ -44,16 +40,10 @@ namespace DEMO
 
             do
             {
-                Console.WriteLine("เลข 2");
+                Console.WriteLine("จำนวนที่ 2");
                 string Text02 = Console.ReadLine();
 
-                if (int.TryParse(Text02, out N2))
-                {
-                    Console.WriteLine($"คุณเลือก เลข {N2}");
-                    break;
-                }
-
-                else if (double.TryParse(Text02, out N2))
+                if (double.TryParse(Text02, out N2))
                 {
                     Console.WriteLine($"คุณเลือก เลข {N2}");
                     break;
@@ -66,7 +56,7 @@ namespace DEMO
                 
             } while (true);
 
-            Console.WriteLine($"\n\n\nยอดทั้งหมด\nเลข 1 : {N1}\nเลข 2 : {N2}\nรวม : {N1 + N2}\n\nPress Enter to continue...");
+            Console.WriteLine($"\n\n\nยอดทั้งหมด\nจำนวนที่ 1 : {N1}\nจำนวนที่ 2 : {N2}\nรวม : {N1 + N2:F2}\n\nPress Enter to continue...");
             Console.ReadKey();
         }
     }
