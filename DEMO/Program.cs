@@ -8,7 +8,7 @@ namespace DEMO
         {
             Console.WriteLine("Hello, World!\n");
 
-            double N1,N2;
+            double N1, N2;
 
             do
             {
@@ -45,7 +45,7 @@ namespace DEMO
                 {
                     Console.WriteLine("\nกรุณาพิมเป็นตัวเลข");
                 }
-                
+
             } while (true);
 
             Console.WriteLine($"\n\n\nสรุปยอดทั้งหมด\nจำนวนที่ 1 : {N1}\nจำนวนที่ 2 : {N2}\nรวม : {N1 + N2:F2}\n\nPress Enter to continue...");
