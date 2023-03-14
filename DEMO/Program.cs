@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DEMO
 {
@@ -10,11 +6,9 @@ namespace DEMO
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-            Console.WriteLine();
+            Console.WriteLine("Hello, World!\n");
 
-            double N1;
-            double N2;
+            double N1,N2;
 
             do
             {
@@ -34,9 +28,7 @@ namespace DEMO
 
             } while (true);
 
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
+            Console.WriteLine("\n\n");
 
             do
             {
@@ -56,7 +48,7 @@ namespace DEMO
                 
             } while (true);
 
-            Console.WriteLine($"\n\n\nยอดทั้งหมด\nจำนวนที่ 1 : {N1}\nจำนวนที่ 2 : {N2}\nรวม : {N1 + N2:F2}\n\nPress Enter to continue...");
+            Console.WriteLine($"\n\n\nสรุปยอดทั้งหมด\nจำนวนที่ 1 : {N1}\nจำนวนที่ 2 : {N2}\nรวม : {N1 + N2:F2}\n\nPress Enter to continue...");
             Console.ReadKey();
         }
     }
