@@ -6,50 +6,56 @@ namespace DEMO
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!\n");
+            Print("Hello, World!", 0, 1);
 
-            double N1, N2;
+            double n1, n2;
 
-            do
-            {
-                Console.WriteLine("จำนวนที่ 1");
-                string Text01 = Console.ReadLine();
+            n1 = InputSection(1);
 
-                if (double.TryParse(Text01, out N1))
-                {
-                    Console.WriteLine($"คุณเลือก เลข {N1}");
-                    break;
-                }
+            Print(string.Empty, 0, 2);
 
-                else
-                {
-                    Console.WriteLine("\nกรุณาพิมเป็นตัวเลข");
-                }
+            n2 = InputSection(2);
 
-            } while (true);
+            Print("สรุปยอดทั้งหมด", 3, 0);
+            Print($"จำนวนที่ 1 : {n1}", 1, 1);
+            Print($"จำนวนที่ 2 : {n2}", 1, 1);
+            Print($"รวม : {n1 + n2}", 1, 1);
+            Print("Press Enter to continue...", 2, 0);
 
-            Console.WriteLine("\n\n");
-
-            do
-            {
-                Console.WriteLine("จำนวนที่ 2");
-                string Text02 = Console.ReadLine();
-
-                if (double.TryParse(Text02, out N2))
-                {
-                    Console.WriteLine($"คุณเลือก เลข {N2}");
-                    break;
-                }
-
-                else
-                {
-                    Console.WriteLine("\nกรุณาพิมเป็นตัวเลข");
-                }
-
-            } while (true);
-
-            Console.WriteLine($"\n\n\nสรุปยอดทั้งหมด\nจำนวนที่ 1 : {N1}\nจำนวนที่ 2 : {N2}\nรวม : {N1 + N2:F2}\n\nPress Enter to continue...");
             Console.ReadKey();
+        }
+
+        private static double InputSection(int section)
+        {
+            do
+            {
+                Console.WriteLine($"จำนวนที่ {section}");
+                string input = Console.ReadLine();
+
+                if (double.TryParse(input, out double value))
+                {
+                    Console.WriteLine($"คุณเลือก เลข {value}");
+                    return value;
+                }
+                else
+                {
+                    Console.WriteLine("{0}กรุณาพิมเป็นตัวเลข", Environment.NewLine);
+                }
+            } while (true);
+        }
+
+        private static void Print(string input, int tabStart = 0, int tabEnd = 0)
+        {
+            for (int i = 0; i < tabStart; i++)
+            {
+                Console.Write("{0}", Environment.NewLine);
+            }
+            Console.Write(input);
+            for (int i = 0; i < tabEnd; i++)
+            {
+                Console.Write("{0}", Environment.NewLine);
+            }
+            Console.WriteLine();
         }
     }
 }
